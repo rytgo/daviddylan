@@ -3,59 +3,120 @@
 :root{
   --max: 720px;
   --space: 20px;
-  --text: #222222cb;       /* slightly darker, more contrast */
-  --heading: #111;    /* near black for power */
-  --link: #1d4ed8;    /* deep modern blue */
+  --text: #222222cb;
+  --heading: #111;
+  --link: #1d4ed8;
 }
 
-*{ box-sizing: border-box; }
-html,body{ margin:0; padding:0; }
+*{ 
+  box-sizing: border-box; 
+}
+
+html,body{ 
+  margin:0; 
+  padding:0; 
+}
 
 body{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 20px;     /* larger base size */
+  font-size: clamp(16px, 2.5vw, 20px);
   line-height: 1.7;
   color: var(--text);
   background: #fafafa77;
-  font-weight: 500;    /* body is semi-bold by default */
+  font-weight: 500;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Center the column */
 .wrap{
   max-width: var(--max);
-  margin: 64px auto;
-  padding: 0 var(--space);
+  margin: clamp(32px, 8vw, 64px) auto;
+  padding: 0 clamp(32px, 6vw, 20px);
+  width: 100%;
 }
 
 /* Headings */
 h1{
-  font-size: clamp(2.7rem, 6vw, 3.8rem);
+  font-size: clamp(2rem, 8vw, 3.8rem);
   line-height: 1.1;
   margin: 0 0 1em 0;
-  font-weight: 800;     /* extra bold */
+  font-weight: 800;
   color: var(--heading);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 h2{
-  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-size: clamp(1.5rem, 6vw, 2.6rem);
   margin: 2em 0 0.6em 0;
   font-weight: 700;
   color: var(--heading);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Paragraphs */
 p{
   margin: 0 0 2em 0;
-  font-weight: 600;    /* thicker than normal */
+  font-weight: 600;
   color: var(--text);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Links */
 a{
   color: var(--link);
   text-decoration: none;
-  font-weight: 600;    /* bold links */
+  font-weight: 600;
+  word-wrap: break-word;
 }
+
 a:hover, a:focus-visible{
   text-decoration: underline;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  
+  .wrap {
+    margin: 32px auto;
+    padding: 0 32px; /* More generous mobile padding */
+  }
+  
+  h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 0.8em;
+  }
+  
+  h2 {
+    font-size: clamp(1.3rem, 7vw, 2rem);
+    margin: 1.5em 0 0.5em 0;
+  }
+  
+  p {
+    margin-bottom: 1.5em;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .wrap {
+    padding: 0 24px; /* Still generous but slightly less for very small screens */
+  }
+  
+  h1 {
+    font-size: clamp(1.5rem, 12vw, 2.2rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.2rem, 8vw, 1.8rem);
+  }
 }
