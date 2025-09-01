@@ -30,7 +30,7 @@ body{
 /* Center the column */
 .wrap{
   max-width: var(--max);
-  margin: clamp(32px, 8vw, 64px) auto;
+  margin: clamp(64px, 12vw, 120px) auto;
   padding: 0 clamp(32px, 6vw, 20px);
   width: 100%;
 }
@@ -43,7 +43,6 @@ h1{
   font-weight: 800;
   color: var(--heading);
   word-wrap: break-word;
-  hyphens: auto;
 }
 
 h2{
@@ -52,7 +51,6 @@ h2{
   font-weight: 700;
   color: var(--heading);
   word-wrap: break-word;
-  hyphens: auto;
 }
 
 /* Paragraphs */
@@ -61,7 +59,6 @@ p{
   font-weight: 600;
   color: var(--text);
   word-wrap: break-word;
-  hyphens: auto;
 }
 
 /* Links */
@@ -83,7 +80,7 @@ a:hover, a:focus-visible{
   }
   
   .wrap {
-    margin: 32px auto;
+    margin: 48px auto; /* More top spacing on mobile too */
     padding: 0 32px; /* More generous mobile padding */
   }
   
