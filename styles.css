@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --max: 720px;
+  --space: 20px;
+  --text: #222222cb;       /* slightly darker, more contrast */
+  --heading: #111;    /* near black for power */
+  --link: #1d4ed8;    /* deep modern blue */
+}
+
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;     /* larger base size */
+  line-height: 1.7;
+  color: var(--text);
+  background: #fafafa77;
+  font-weight: 500;    /* body is semi-bold by default */
+}
+
+/* Center the column */
+.wrap{
+  max-width: var(--max);
+  margin: 64px auto;
+  padding: 0 var(--space);
+}
+
+/* Headings */
+h1{
+  font-size: clamp(2.7rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  margin: 0 0 1em 0;
+  font-weight: 800;     /* extra bold */
+  color: var(--heading);
+}
+
+h2{
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  margin: 2em 0 0.6em 0;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+/* Paragraphs */
+p{
+  margin: 0 0 2em 0;
+  font-weight: 600;    /* thicker than normal */
+  color: var(--text);
+}
+
+/* Links */
+a{
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;    /* bold links */
+}
+a:hover, a:focus-visible{
+  text-decoration: underline;
+}
